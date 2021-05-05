@@ -7,7 +7,9 @@ export default ()=>{
         combineReducers({
             expenses:expensesReducer,
             filters:filtersReducer
-        })
+        }),
+        // this line added for to enable 'google redux devtool'
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
     return store;
 };

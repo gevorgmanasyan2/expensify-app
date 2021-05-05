@@ -11,11 +11,13 @@ import getVisibleExpenses from './selectors/expenses';
 import AppRouter from '../src/router/AppRouter';
 import reportWebVitals from './reportWebVitals';
 
+
 const store= configureStore();
 
-store.dispatch(addExpense({description:'Water bill'}));
-store.dispatch(addExpense({description:'Gaz bill'}));
-store.dispatch(setTextFilter('water'))
+store.dispatch(addExpense({description:'Water bill', amount:1500}));
+store.dispatch(addExpense({description:'Gaz bill',amount:800, createdAt:1000}));
+store.dispatch(addExpense({description:'Rent', amount:109500}));
+
 
 const state=store.getState();
 const visibleExpenses=getVisibleExpenses(state.expenses,state.filters);
