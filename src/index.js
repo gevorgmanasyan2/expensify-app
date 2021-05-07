@@ -10,6 +10,7 @@ import {setTextFilter} from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import AppRouter from '../src/router/AppRouter';
 import reportWebVitals from './reportWebVitals';
+import 'react-dates/lib/css/_datepicker.css';
 
 
 const store= configureStore();
