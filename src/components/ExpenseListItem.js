@@ -8,10 +8,7 @@ const ExpenseListItem=({dispatch, id, description,amount,createdAt})=>(
         <Link to={`/edit/${id}`}>
         <h3>{description}</h3>
         </Link>        
-        <p>{amount} - {createdAt}</p>
-        <button onClick={()=>{
-            dispatch(removeExpense({id}));
-        }}>Remove</button>
+        <p>{amount} - {createdAt}</p>        
     </div>
 );
-export default connect()(ExpenseListItem);
+export default ExpenseListItem;

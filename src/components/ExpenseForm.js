@@ -3,7 +3,7 @@ import React from 'react';
 // 1.moment 2.react-dates@12.3.0(the latest version give some errors!)  3.react-addons-shallow-compare
 import moment from 'moment';
 import {SingleDatePicker} from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
+
 
 const now=moment();
 console.log(now.format('MMM Do, YYYY'));
