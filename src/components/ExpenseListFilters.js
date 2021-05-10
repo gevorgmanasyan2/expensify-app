@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { DateRangePicker } from 'react-dates';
+import '../styles/styles.css';
 import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from "../actions/filters";
 
 class ExpenseListFilters extends React.Component {
@@ -16,8 +17,12 @@ class ExpenseListFilters extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="content-container">
+        <div className="input-group">
+        <div className="input-group__item">
         <input
+        className="text-input"
+        placeholder="Search expenses"
           type="text"
           value={this.props.filters.text}
           onChange={(e) => {
@@ -25,7 +30,10 @@ class ExpenseListFilters extends React.Component {
             console.log(e.target.value);
           }}
         />
+        </div>
+        <div className="input-group__item">
         <select
+        className="select"
           value={this.props.filters.sortBy}
           onChange={(e) => {
             if (e.target.value === "date") {
@@ -38,7 +46,8 @@ class ExpenseListFilters extends React.Component {
           <option value="date">Date</option>
           <option value="amount">Amount</option>
         </select>
-        <br />
+        </div>
+        <div className="input-group__item">
         <DateRangePicker
           startDate={this.props.filters.startDate}
           endDate={this.props.filters.endDate}
@@ -49,6 +58,8 @@ class ExpenseListFilters extends React.Component {
           isOutsideRange={() => false}
           showClearDates={true}
         />
+        </div>
+        </div>     
       </div>
     );
   }
